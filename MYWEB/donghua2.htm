@@ -77,7 +77,160 @@ function goToURL(url) {
             <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="400" height="300">
               <param name="movie" value="../MYWEB/flash/qiqiu.swf" />
               <param name="quality" value="high" />
-              <embed src="../MYWEB/flash/qiqiu.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="400" height="300"></embed>
+              <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>气球GIF动画</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #e91e63;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            color: #666;
+            margin-bottom: 20px;
+            max-width: 400px;
+        }
+        
+        .gif-container {
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background-color: #87ceeb;
+            position: relative;
+        }
+        
+        .gif-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .info {
+            margin-top: 15px;
+            text-align: center;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        button {
+            background: #e91e63;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #c2185b;
+        }
+        
+        .balloon-count {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>彩色气球动画</h1>
+        <p class="description">这是一个替换了原始Flash内容的气球GIF动画，展示了漂浮的彩色气球。</p>
+        
+        <div class="gif-container">
+            <img id="balloonGif" src="../MYWEB/flash/qiqiu.gif" alt="漂浮的气球动画">
+        </div>
+        
+        <div class="balloon-count">气球数量: <span id="count">5</span></div>
+        
+        <div class="controls">
+            <button id="addBtn">添加气球</button>
+            <button id="removeBtn">减少气球</button>
+        </div>
+        
+        <div class="info">
+            气球GIF动画 - 已替换原始Flash内容
+        </div>
+    </div>
+
+    <script>
+        const balloonGif = document.getElementById('balloonGif');
+        const addBtn = document.getElementById('addBtn');
+        const removeBtn = document.getElementById('removeBtn');
+        const countElement = document.getElementById('count');
+        
+        let balloonCount = 5;
+        
+        // 添加气球
+        addBtn.addEventListener('click', function() {
+            if (balloonCount < 10) {
+                balloonCount++;
+                updateBalloonCount();
+            }
+        });
+        
+        // 减少气球
+        removeBtn.addEventListener('click', function() {
+            if (balloonCount > 1) {
+                balloonCount--;
+                updateBalloonCount();
+            }
+        });
+        
+        function updateBalloonCount() {
+            countElement.textContent = balloonCount;
+        }
+        
+        // 点击气球GIF可以切换动画
+        balloonGif.addEventListener('click', function() {
+            // 在实际应用中，这里可以切换到不同的GIF
+            alert('点击了气球动画！在实际应用中，这里可以切换到不同的GIF。');
+        });
+    </script>
+</body>
+</html>
+				
+				
+				
+				
+				
+				
+				
             </object>
           </td>
         </tr>
